@@ -1,0 +1,76 @@
+html,body{
+    height: 100%;
+    margin: 0;
+  }
+  input {
+    border: 1px solid;
+    border-radius: 5px;
+    min-width: 34%;
+  
+  }
+  button{
+    font-size: 14px;
+    font-family: 'source Sance Pro', sans-serif;
+    border: 1px solid lightskyblue;
+    border-radius: 5px;
+    padding: 0.5%;
+    background-color: lightskyblue;
+    color: white;
+  }
+  .urlButton{
+    font-size: 14px;
+    font-family: 'source Sance Pro', sans-serif;
+    border: 1px solid lightskyblue;
+    border-radius: 5px;
+    padding: 0.5%;
+    background-color: lightskyblue;
+    color: white;
+  }
+  
+  /* holds the header navigation */
+  .navigationBar{
+      list-style-type: none;
+      margin-top: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: black;
+  }
+  /* Defines Li  */
+  .navigationList{
+  float: left;
+  }
+  
+  .navigationText{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+    }
+    .navigationText:hover{
+      background-color: #333;
+    }
+  
+  
+    .pageStructure{
+      display: block;
+      border: 1px solid black;
+      min-height: 100%;
+      margin-top: 2.5;
+      margin-left: 13%;
+      margin-right: 13%;
+      margin-bottom: 5px;
+      overflow: hidden;
+    
+    }  
+    footer{
+      background-color: black;
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 50px;
+    }
+ 
+ 
+  
