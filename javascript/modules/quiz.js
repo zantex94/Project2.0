@@ -5,7 +5,7 @@ export class Quiz{
     constructor(name, created, questions){
         this.name = name;
         this.created = created;
-        this.questions = [QuizzQuestions];
+        this.questions = questions[QuizzQuestions];
 
     }
     shuffle(){
