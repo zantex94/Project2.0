@@ -1,9 +1,9 @@
 'use strict'
 
 export function displayQuiz(quiz, where) {
-    const quizTitle = document.getElementById('quizTitle');
-
-    quizTitle.innerHTML = quiz.name;
+    const quizTitle = document.getElementById('quizTitle');    
+  
+    quizTitle.innerHTML = quiz.name;        
 
     for (let i = 0; i < quiz.questions.length; i++) {
         const h3 = document.createElement('h3');
@@ -22,4 +22,12 @@ export function displayQuiz(quiz, where) {
             where.appendChild(button);
         });
     }
+
+    /*while ((!false) Alle svar ikke er checked) {
+        const submit = document.createElement('button');
+
+        submit.appendChild(document.createTextNode(element));
+
+        where.appendChild(submit);
+    }*/
 }
