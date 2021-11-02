@@ -6,6 +6,7 @@ html,body{
     border: 1px solid;
     border-radius: 5px;
     min-width: 34%;
+    background-color: blanchedalmond;
   }
   button{
     font-size: 14px;

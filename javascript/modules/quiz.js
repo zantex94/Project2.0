@@ -1,18 +1,19 @@
 'use strict'
-import { QuizzQuestions } from "./quizquestions";
 
 export class Quiz{
-    constructor(name, created, questions){
+    constructor(name, created){
         this.name = name;
         this.created = created;
-        this.questions = questions[QuizzQuestions];
+        this.questions = [];
 
     }
     shuffle(){
-        //shuffle array of questions
+        //shuffle array of questions.
     }
     toString(){
         //to string array of questions.
     }
-
+    addQuestion(q) {
+        this.questions.push(q);
+    }
 }
