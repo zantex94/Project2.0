@@ -8,12 +8,14 @@ export class Quiz{
 
     }
     shuffle(){
-        //shuffle array of questions.
+        // shuffle questions
+        this.questions.sort(() => Math.random() - 0.5);
     }
     toString(){
         //to string array of questions.
     }
     addQuestion(q) {
+        //this adds q arrays to our this.questions.
         this.questions.push(q);
     }
 }

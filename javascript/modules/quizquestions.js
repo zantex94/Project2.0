@@ -9,8 +9,21 @@ export class QuizzQuestions{
     }
     toString(){
         // tostring quizz quetions
-        let s;
-
+        let s = "";
+        s += '<div class="answerDiv">';
+        s +='<div class="paraDiv">';
+        s += '<p class="pInfo">';
+        s += 'Vælg 1 svarmulighed';
+        s += '</p>';
+        s += '</div>';
+        for(let i = 0; i < this.possibleAnswers.length; i++){
+            s += '<button class="answerButton">';
+            s += '<p>';
+            s += this.possibleAnswers[i];
+            s += '</p>';
+            s += '</button>'
+        }
+        s += '</div>';
         return s;
     }
     addAnswer(a) {

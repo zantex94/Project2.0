@@ -2,10 +2,15 @@ html,body{
     height: 100%;
     margin: 0;
   }
-  input {
+  .input {
     border: 1px solid;
     border-radius: 5px;
     min-width: 34%;
+    background-color: blanchedalmond;
+  }
+  .inputRadio {
+    border: 1px solid;
+    border-radius: 5px;
     background-color: blanchedalmond;
   }
   button{
@@ -54,8 +59,9 @@ html,body{
   
   
     .pageStructure{
-      display: block;
-      border: 1px solid black;
+      display: flex;
+      flex-direction: column;
+      /* border: 1px solid black; */
       min-height: 100%;
       margin-top: 2.5;
       margin-left: 13%;
@@ -70,6 +76,35 @@ html,body{
       display: grid;
       grid-template-columns: 1fr 1fr;
       height: 50px;
+    }
+
+    .answerButton{
+      font-size: 14px;
+      font-family: 'source Sance Pro', sans-serif;
+      border: 1px solid #34729E;
+      border-radius: 5px;
+      padding: 0.5%;
+      margin: 15px;
+      background-color: #34729E;
+      color: #fff;
+      min-width: 95%;
+      max-width: 95%;
+    }
+    .answerDiv{
+      background-color: #4390C8;
+      flex-direction: column;
+      display: flex;
+      border-radius: 30px;
+      padding: 20px;
+      align-items: space-between;
+      justify-content: space-between;
+      min-height: 200px;
+
+    }
+    .pInfo{
+      display: flex;
+      justify-content: center;
+      color: white;
     }
  
  
