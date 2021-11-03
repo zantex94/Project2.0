@@ -61,6 +61,12 @@ html,body{
     text-decoration: none;
     
     }
+
+    .navigationBar > .navigationText > .active {
+      text-decoration: underline !important;
+      color: red;
+    }
+
     .navigationText:hover{
       background-color: #333;
     }
