@@ -13,6 +13,9 @@ html,body{
     border-radius: 5px;
     background-color: blanchedalmond;
   }
+  .checked {
+    background-color: #De9e3f !important;
+  }
   button{
     font-size: 14px;
     font-family: 'source Sance Pro', sans-serif;

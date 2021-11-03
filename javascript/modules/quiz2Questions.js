@@ -1,5 +1,5 @@
-import { QuizzQuestions } from "./quizquestions.js";
-import { Quiz } from "./quiz.js";
+import { QuizzQuestions } from "./createQuestions.js";
+import { Quiz } from "./createQuiz.js";
 
 export const quizTwo = new Quiz ('Matematik', new Date);
 

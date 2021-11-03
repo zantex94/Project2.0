@@ -1,40 +1,63 @@
 'use strict'
-import {Quiz} from "./modules/quiz.js";
+import {Quiz} from "./modules/createQuiz.js";
 import {$} from './main.js';
+import { quizOne } from "./modules/quiz1Questions.js";
 // for handle localstorage.
 // localStorage.setItem("player",JSON.stringify(person[0]));
 
 //this one connects and handle all classes and puts it on the html.
 // const displayQuiz = function (quiz, where)
 
-export function displayQuiz(quiz, where) {
-    const quizTitle = document.getElementById('quizTitle');    
-  
-    quizTitle.innerHTML = quiz.name;        
+const checkedButtons = document.getElementsByClassName('checked');
 
-    for (let i = 0; i < quiz.questions.length; i++) {
-        const h3 = document.createElement('h3');
-        const h2 = document.createElement('h2');
+let isTrue = false;
+console.log(checkedButtons);
 
-        h2.appendChild(document.createTextNode(`${i + 1} / ${quiz.questions.length}`));
-        h3.appendChild(document.createTextNode(`Spørgsmål ${i + 1}: ${quiz.questions[i].question}`));        
 
-        where.append(h2, h3);
+export function displayQuiz(quiz, where) {  
+    
+    
+    where.innerHTML = quiz.toString();
+    
+    const answerButton = document.getElementsByClassName('answerButton');
+    const currentDiv = document.getElementById(quiz.length);
+    const submitButton = document.getElementById('submit');
+    
 
-        quiz.questions[i].possibleAnswers[0].forEach(element => {
-            const button = document.createElement('button');
-
-            button.appendChild(document.createTextNode(element));
-
-            where.appendChild(button);
+    for(let i = 0; i < answerButton.length; i++) {
+        answerButton[i].addEventListener('click', function() {
+            answerButton[i].classList.toggle('checked');
+            //console.log(checkedButtons.length);
+            //console.log(checkedButtons);
+            
+            validate(quiz);
         });
     }
+    
+    submitButton.addEventListener('click', function(e) {
+        
+        if (isTrue) {
+            
+        } else {
+            e.preventDefault();
+            alert('Du mangler at udfylde alle spørgsmål.')
+        }
+    });
 
-    /*while ((!false) Alle svar ikke er checked) {
-        const submit = document.createElement('button');
+    
+}
 
-        submit.appendChild(document.createTextNode(element));
 
-        where.appendChild(submit);
-    }*/
+
+
+
+function validate(quiz) {
+    console.log(`${checkedButtons.length} / ${quiz.questions.length}`);  
+
+    if (checkedButtons.length === quiz.questions.length) {
+        isTrue = true;      
+    } else {
+        isTrue = false;
+    }
+
 }

@@ -46,7 +46,7 @@ export function createHeader() {
     const menuItem = document.querySelectorAll('.navigationBar > li > a');
     const menuLength = menuItem.length;
 
-    console.log(menuItem);
+    //console.log(menuItem);
 
     for (let i = 0; i < menuLength; i++) {
 

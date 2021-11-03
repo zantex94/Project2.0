@@ -9,8 +9,8 @@ const forside = document.getElementById('forside');
 const quiz1 = document.getElementById('quiz1');
 const quiz2 = document.getElementById('quiz2');
 
-console.log(quizOne);
-console.log(quizOne.name);
+
+console.log(quizOne.questions.length);
 
 const init = function () {
     createHeader();
@@ -19,7 +19,8 @@ const init = function () {
     }
     // Ghetto løsning implementeret på baggrund af fejl i append på Quiz 2 siden.
     if (quiz1) {
-        displayQuiz(quizOne, quiz1);
+        displayQuiz(quizOne, quiz1);       
+        
 
     }
     if (quiz2) {
