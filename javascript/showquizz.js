@@ -10,7 +10,7 @@ export function displayQuiz(quiz, where) {
         const h2 = document.createElement('h2');
 
         h2.appendChild(document.createTextNode(`${i + 1} / ${quiz.questions.length}`));
-        h3.appendChild(document.createTextNode(`Spørgsmål ${i + 1}: ${quiz.questions[i].question}`));  
+        h3.appendChild(document.createTextNode(`Spørgsmål ${i + 1}: ${quiz.questions[i].question}`));        
 
         where.append(h2, h3);
 

@@ -17,6 +17,7 @@ html,body{
     background-color: lightskyblue;
     color: white;
   }
+
   .urlButton{
     font-size: 14px;
     font-family: 'source Sance Pro', sans-serif;
@@ -48,6 +49,12 @@ html,body{
     text-decoration: none;
     
     }
+
+    .navigationBar > .navigationText > .active {
+      text-decoration: underline !important;
+      color: red;
+    }
+
     .navigationText:hover{
       background-color: #333;
     }

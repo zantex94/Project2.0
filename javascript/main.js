@@ -9,6 +9,9 @@ const forside = document.getElementById('forside');
 const quiz1 = document.getElementById('quiz1');
 const quiz2 = document.getElementById('quiz2');
 
+console.log(quizOne);
+console.log(quizOne.name);
+
 const init = function () {
     createHeader();
     if (forside) {
@@ -21,6 +24,6 @@ const init = function () {
     }
     if (quiz2) {
         displayQuiz(quizTwo, quiz2);
-    }        
+    }      
 }
 window.addEventListener("load", init);
