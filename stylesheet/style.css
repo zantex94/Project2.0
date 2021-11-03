@@ -22,6 +22,14 @@ html,body{
     background-color: lightskyblue;
     color: white;
   }
+  button:hover{
+    color: black;
+    cursor: pointer;
+  }
+  button:active {
+    transform: translateY(4px);
+  
+  }
   .urlButton{
     font-size: 14px;
     font-family: 'source Sance Pro', sans-serif;

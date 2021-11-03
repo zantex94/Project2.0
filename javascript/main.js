@@ -5,7 +5,7 @@ import {Quiz} from './modules/quiz.js';
 import {QuizzQuestions} from './modules/quizquestions.js'
 export const $ = function (bar) { return document.getElementById(bar); };
 /**test tostring in quizquestions */
-let q = new QuizzQuestions("biler", "hvilke biler er svensk", "volvo");
+let q = new QuizzQuestions("biler", "hvilke biler er af svensk oprindelse?", "volvo");
 let a = "Nissan";
 let b = "Volvo";
 let c = "Ford";
@@ -17,6 +17,21 @@ q.addAnswer(d);
 let div1 = $('quizarea');
 console.log(q.toString());
 div1.innerHTML = q.toString();
+
+// let b = new Quiz("biler", new Date);
+// let a = "Hvad er klokken?";
+// let x = "Hvilken ugedag er det?";
+// let y = "Hvilken måned er det?";
+// b.addQuestion(a);
+// b.addQuestion(x);
+// b.addQuestion(y);
+// let div1 = $('quizarea');
+// console.log(q.toString());
+// div1.innerHTML = b.toString();
+
+
+
+
 
 /**test shuffle */
 // let a = "Hvad er klokken?";

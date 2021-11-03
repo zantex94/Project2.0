@@ -10,6 +10,11 @@ export class QuizzQuestions{
     toString(){
         // tostring quizz quetions
         let s = "";
+        s += "<div class='questionDiv'";
+        s += "<p class='questionP'>";
+        s += this.question;
+        s += "</p>";
+        s += "</div>";
         s += '<div class="answerDiv">';
         s +='<div class="paraDiv">';
         s += '<p class="pInfo">';
