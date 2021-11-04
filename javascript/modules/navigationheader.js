@@ -6,10 +6,9 @@ import { quizTwo } from './quiz2Questions.js';
 
 export function createHeader() {
     
-    
-
     let head = $('navigationHeader');
     head.setAttribute("class", "navigationBar");
+    let d1 = document.createElement("div");
     let l1 = document.createElement("li");
     let a1 = document.createElement("a");
     let l2 = document.createElement("li");
@@ -17,6 +16,8 @@ export function createHeader() {
     let l3 = document.createElement("li");
     let a3 = document.createElement("a");
 
+    d1.setAttribute("class", "nav-box");
+   
 
     l1.setAttribute("class", "navigationList");
     a1.setAttribute("class", "navigationText");
@@ -24,11 +25,9 @@ export function createHeader() {
     a1.innerHTML = "Forside";
     l1.appendChild(a1);
 
-
     l2.setAttribute("class", "navigationList");
     a2.setAttribute("class", "navigationText");
     a2.setAttribute("href", "quizz1.html");
-
     a2.innerHTML = "Quiz 1: " + quizOne.name;
     l2.appendChild(a2);
 
@@ -38,9 +37,10 @@ export function createHeader() {
     a3.innerHTML = "Quiz 2: " + quizTwo.name;
     l3.appendChild(a3);
 
-    head.appendChild(l1);
-    head.appendChild(l2);
-    head.appendChild(l3);
+    d1.appendChild(l1);
+    d1.appendChild(l2);
+    d1.appendChild(l3);
+    head.appendChild(d1);
 
     const currentLocation = location.href;
     const menuItem = document.querySelectorAll('.navigationBar > li > a');

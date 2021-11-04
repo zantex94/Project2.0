@@ -15,12 +15,13 @@ export class Quiz{
         //to string array of questions.
         let s = "";
                 
-        for(let i = 0; i < this.questions.length; i++){            
+        for(let i = 0; i < this.questions.length; i++){ 
+            s += "<div class='quizbox'>"           
             s += "<h2>";
             s += "Spørgsmål " + (i + 1) + " ud af " + this.questions.length;
             s += "</h2>";
-            s += `<div class='questionDiv'`;
-            s += "<p class='questionP'>";
+            s += "<div class='questionDiv'>";
+            s += "<p class='question'>";
             s += this.questions[i].question;
             s += "</p>";
             s += "</div>";
@@ -32,11 +33,14 @@ export class Quiz{
             s += '</div>';
         
         for(let j = 0; j < this.questions[i].possibleAnswers.length; j++) {
+            s += '<div class="inputLabel">'
             s += `<input type='radio' name='group${i}' class="answerButton" value='${this.questions[i].possibleAnswers[j]}'>`;
             s += '<label>';
             s += this.questions[i].possibleAnswers[j];
             s += '</label>';
+            s += '</div>'
         }
+            s += '</div>';
             s += '</div>';
 
         }
