@@ -14,7 +14,7 @@ export class Quiz{
     toString(){
         //to string array of questions.
         let s = "";
-                
+
         for(let i = 0; i < this.questions.length; i++){            
             s += "<h2>";
             s += "Spørgsmål " + (i + 1) + " ud af " + this.questions.length;
@@ -29,16 +29,14 @@ export class Quiz{
             s += '<p class="pInfo">';
             s += 'Vælg 1 svarmulighed';
             s += '</p>';
+            s += '</div>';        
+            for(let j = 0; j < this.questions[i].possibleAnswers.length; j++) {
+                s += `<input type='radio' name='group${i}' class="answerButton" value='${this.questions[i].possibleAnswers[j]}'>`;
+                s += '<label>';
+                s += this.questions[i].possibleAnswers[j];
+                s += '</label>';
+            }
             s += '</div>';
-        
-        for(let j = 0; j < this.questions[i].possibleAnswers.length; j++) {
-            s += `<input type='radio' name='group${i}' class="answerButton" value='${this.questions[i].possibleAnswers[j]}'>`;
-            s += '<label>';
-            s += this.questions[i].possibleAnswers[j];
-            s += '</label>';
-        }
-            s += '</div>';
-
         }
         s += '<form action="../html/results.html">';
         s += '<input type="submit" value="Submit" id="submit">';

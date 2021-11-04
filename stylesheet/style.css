@@ -16,6 +16,9 @@ html,body{
   .checked {
     background-color: #De9e3f !important;
   }
+  .active {
+    text-decoration: underline;
+  }
   button{
     font-size: 14px;
     font-family: 'source Sance Pro', sans-serif;
@@ -63,11 +66,6 @@ html,body{
     padding: 14px 16px;
     text-decoration: none;
     
-    }
-
-    .navigationBar > .navigationText > .active {
-      text-decoration: underline !important;
-      color: red;
     }
 
     .navigationText:hover{

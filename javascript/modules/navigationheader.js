@@ -3,10 +3,7 @@ import {$} from './../main.js';
 import { quizOne } from './quiz1Questions.js';
 import { quizTwo } from './quiz2Questions.js';
 
-
 export function createHeader() {
-    
-    
 
     let head = $('navigationHeader');
     head.setAttribute("class", "navigationBar");
@@ -20,21 +17,21 @@ export function createHeader() {
 
     l1.setAttribute("class", "navigationList");
     a1.setAttribute("class", "navigationText");
-    a1.setAttribute("href", "forside.html");
+    a1.setAttribute("href", "index.html");
     a1.innerHTML = "Forside";
     l1.appendChild(a1);
 
 
     l2.setAttribute("class", "navigationList");
     a2.setAttribute("class", "navigationText");
-    a2.setAttribute("href", "quizz1.html");
+    a2.setAttribute("href", "quiz1.html");
 
     a2.innerHTML = "Quiz 1: " + quizOne.name;
     l2.appendChild(a2);
 
     l3.setAttribute("class", "navigationList");
     a3.setAttribute("class", "navigationText");
-    a3.setAttribute("href", "quizz2.html");
+    a3.setAttribute("href", "quiz2.html");
     a3.innerHTML = "Quiz 2: " + quizTwo.name;
     l3.appendChild(a3);
 
@@ -45,8 +42,6 @@ export function createHeader() {
     const currentLocation = location.href;
     const menuItem = document.querySelectorAll('.navigationBar > li > a');
     const menuLength = menuItem.length;
-
-    //console.log(menuItem);
 
     for (let i = 0; i < menuLength; i++) {
 
