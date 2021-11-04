@@ -12,18 +12,19 @@ html,body{
 header{
   position: sticky;
   top: 0px;
-  z-index: 999
+  z-index: 999;
 }
 #navigationHeader{
   height: 150px;
   background: #4390C8;
   display: flex;
   align-items: center;
-  
+  padding: 0px;
 }
 
 .nav-box{
   display: flex;
+  padding: 0px 100px;
 
 }
 /* Defines Li  */
@@ -52,12 +53,12 @@ header{
 }
 
 
-#navigationHeader > .navigationList > .active{
+#navigationHeader > .nav-box > .navigationList > .active{
   font-weight: 700;
   position: relative;
 }
 
-#navigationHeader > .navigationList > .active:after{
+#navigationHeader > .nav-box > .navigationList > .active:after{
   content: '';
   width: 100%;
   height: 2px;
@@ -70,7 +71,7 @@ header{
 
 /****** main *******/
 main{
-  
+  min-height: calc(100vh - 150px);
 }
 main .pageStructure{
   display: flex;
@@ -100,6 +101,7 @@ main .container{
 
 main .container .card{
   min-width: 100px;
+  max-width: 400px;
   min-height: 300px;
   background: #4390C8;
   color: white;
@@ -108,12 +110,13 @@ main .container .card{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 50px 10px;
 }
 main .container .card h1{
-
+  font-weight: 500;
 }
 main .container .card p{
-
+  max-width: 80%;
 }
 main .container .card button{
   background: #34729E;
@@ -121,6 +124,7 @@ main .container .card button{
   box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   border: none;
+  margin-top: 50px;
 }
 main .container .card button a{
   text-transform: uppercase;
@@ -130,13 +134,14 @@ main .container .card button a{
 main .container .vr{
   width: 4px;
   height: 125%;
-  background: #34729E;
+  background: #4390C8;
 }
 /* Quiz page */
 main .pageStructure .quiz{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 50px 0px;
 }
 main .quizbox{
   width: 100%;
@@ -206,14 +211,14 @@ main .quizbox .answerDiv .inputLabel label{
 /****** footer *******/
 
 footer{
-  
-  min-width: 100%;
+  width: 100%;
   margin-top: 100px;
   background-color: #4390C8;
   color: white;
-  height: 100px;
+
   display: flex;
   align-items: center;
+  padding: 50px 100px;
 }
 
 

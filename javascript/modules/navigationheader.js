@@ -43,7 +43,7 @@ export function createHeader() {
     head.appendChild(d1);
 
     const currentLocation = location.href;
-    const menuItem = document.querySelectorAll('.navigationBar > li > a');
+    const menuItem = document.querySelectorAll('.navigationBar > .nav-box > .navigationList > .navigationText');
     const menuLength = menuItem.length;
 
     for (let i = 0; i < menuLength; i++) {
