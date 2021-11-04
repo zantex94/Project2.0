@@ -5,7 +5,6 @@ export class Quiz{
         this.name = name;
         this.created = created;
         this.questions = [];
-
     }
     shuffle(){
         // shuffle questions
@@ -30,7 +29,8 @@ export class Quiz{
             s += '<p class="pInfo">';
             s += 'Vælg 1 svarmulighed';
             s += '</p>';
-            s += '</div>';
+            s += '</div>';        
+            
         
         for(let j = 0; j < this.questions[i].possibleAnswers.length; j++) {
             s += '<div class="inputLabel">'
