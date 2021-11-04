@@ -41,16 +41,20 @@ function validate(quiz) {
     }
 }
 
-export function dosomething(){
+export function doSomething(){
 
-// const forside = document.getElementById('forside');
-const quiz1 = document.getElementById('quiz1');
-const quiz2 = document.getElementById('quiz2');
-if(quiz1){
-    displayQuiz(quizOne, quiz1);
-}else{
-    displayQuiz(quizTwo, quiz2);
-}
+    const index = document.getElementById('index');
+    const quiz1 = document.getElementById('quiz1');
+    const quiz2 = document.getElementById('quiz2');
+    if (index) {
+        // DO NOTHING
+    }
+    if (quiz1) {
+        displayQuiz(quizOne, quiz1);
+    }
+    if (quiz2) {
+        displayQuiz(quizTwo, quiz2);
+    }
 
 
 }
