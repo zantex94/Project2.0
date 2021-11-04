@@ -5,6 +5,7 @@ export class Quiz{
         this.name = name;
         this.created = created;
         this.questions = [];
+
     }
     shuffle(){
         // shuffle questions

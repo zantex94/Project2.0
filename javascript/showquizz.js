@@ -4,40 +4,40 @@ import { quizOne } from './modules/quiz1Questions.js';
 import { quizTwo } from './modules/quiz2Questions.js';
 
 const checkedButtons = document.getElementsByClassName('checked');
-const submitButton = document.getElementById('submit');
+//const submitButton = document.getElementById('submit');
 const answerButton = document.getElementsByClassName('answerButton');
 
-
-console.log(quizOne);
+console.log(answerButton.length);
 
 let isTrue = true;
 let userAnswers = [];
 
-export function displayQuiz(quiz, where) {
+export function displayQuiz(quiz, where) {    
 
     where.innerHTML = quiz.toString();
-    
-    const answerButton = document.getElementsByClassName('answerButton');    
-    const submitButton = document.getElementById('submit');    
+    selectedAnswer();
+    const submitButton = document.getElementById('submit');
 
-    for(let i = 0; i < answerButton.length; i++) {
-        
-        //const checkedAnswers = document.querySelector()
-        answerButton[i].addEventListener('click', function() {
-            answerButton[i].classList.toggle('checked');    
-            
-            validate(quiz);
-        });     
-        //console.log(answerButton[i])
-    }
+    console.log(submitButton); 
 
     submitButton.addEventListener('click', function(e) {
         
+        
         if(isTrue) {
+            e.preventDefault();
+            
+
+            console.log(quiz);
+
+            
             
             let string = JSON.stringify(quiz);
             localStorage.setItem("quiz", string);
-            localStorage.setItem('checkedAnswers', checkedAnswer);
+            localStorage.setItem('checkedAnswers', userAnswers);
+            where.innerHTML = '';
+            where.innerHTML = quiz.toStringResults();
+
+
             
 
         } else {
@@ -45,40 +45,93 @@ export function displayQuiz(quiz, where) {
             alert('Du mangler at svare på et eller flere spørgsmål.');
         }
     })
+    
+    
+    /*const answerButton = document.getElementsByClassName('answerButton');    
+    const submitButton = document.getElementById('submit');*/    
+
+    /*for(let i = 0; i < answerButton.length; i++) {
+        
+        //const checkedAnswers = document.querySelector()
+        answerButton[i].addEventListener('click', function() {
+            answerButton[i].classList.toggle('checked');
+            let checkedAnswer = document.querySelector(`input[name='group${i}']:checked`).value;
+            
+            console.log(checkedAnswer);
+            
+            //validate(quiz);
+        });     
+        //console.log(answerButton[i])
+    }
+
+    submitButton.addEventListener('click', function(e) {
+        
+        if(isTrue) {
+            e.preventDefault();
+            
+            let string = JSON.stringify(quiz);
+            localStorage.setItem("quiz", string);
+            localStorage.setItem('checkedAnswers', userAnswers);
+            
+
+        } else {
+            e.preventDefault();
+            alert('Du mangler at svare på et eller flere spørgsmål.');
+        }
+    })*/
 
     
 }
 
-function validate(quiz) {
-
-    /*for(let i = 0; i < answerButton.length; i++) {
-        if (answerButton[i].checked) {
-            console.log('Hallo')
-        }
-    }*/
-
+function selectedAnswer() {
+    const answerButton = document.getElementsByClassName('answerButton');    
     
+    for(let i = 0; i < answerButton.length; i++) {
+        
+        //const checkedAnswers = document.querySelector()
+        answerButton[i].addEventListener('click', function() {
+            answerButton[i].classList.toggle('checked');
+            /*let checkedAnswer = document.querySelector(`input[name='group${i}']:checked`).value;
+            
+            console.log(checkedAnswer);*/
+            
+            //validate(quiz);
+        });     
+        //console.log(answerButton[i])
+    }
+}
+
+function saveAnswers(quiz) {
+    //let userAnswers = []; 
+    console.log(quiz);
+    console.log(quiz.questions[0].possibleAnswers)
+    for(let i = 0; i <= quiz.questions[i].possibleAnswers.length; i++) {
+        userAnswers.push(document.querySelector(`input[name='group${i}']:checked`).value);
+    }
+
+    userAnswers.push(checkedAnswer);
+    console.log(userAnswers);
+
+
+}
+
+function validate(quiz) {
+    
+    let checkedAnswer = [];
 
     for(let i = 0; i < quiz.questions[i].possibleAnswers.length; i++) {
 
         //console.log(quiz.questions[i].possibleAnswers)
             
-        let checkedAnswer = document.querySelector(`input[name='group${i}']:checked`).value;
-        userAnswers.push(checkedAnswer);
-        console.log(userAnswers);
+        checkedAnswer.push(document.querySelector(`input[name='group${i}']:checked`).value);
+        
+        
     }
-
-    
-    //console.log(`${answerButton.checked} / ${quiz.questions.length}`);  
-
-    /*if (answerButton.checked === quiz.questions.length) {
-        isTrue = true;      
-    } else {
-        isTrue = false;
-    }*/
+    console.log(checkedAnswer);
 }
+    
 
-function displayResults(where) {
+/*function displayResults(where) {
 
     let quiz = localStorage.getItem('quiz');
     let object = JSON.parse(quiz);    
@@ -87,9 +140,9 @@ function displayResults(where) {
 
     where.innerHTML = display;
 
-}
+}*/
 
-function toStringResults(o) {
+/*function toStringResults(o) {
     let s = "";
         
         for(let i = 0; i < o.questions.length; i++){
@@ -115,7 +168,7 @@ function toStringResults(o) {
 
         return s;
 
-}
+}*/
 
 export function doSomething(){
 
@@ -128,13 +181,14 @@ export function doSomething(){
     }
     if (quiz1) {
         displayQuiz(quizOne, quiz1);
+        saveAnswers(quizOne)
     }
     if (quiz2) {
         displayQuiz(quizTwo, quiz2);
     }
-    if (results) {
+    /*if (results) {
         displayResults(results);
-    }
+    }*/
 
 
 }
