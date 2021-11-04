@@ -1,4 +1,6 @@
 'use strict'
+import { quizOne } from './modules/quiz1Questions.js';
+import { quizTwo } from './modules/quiz2Questions.js';
 // for handle localstorage.
 // localStorage.setItem("player",JSON.stringify(person[0]));
 
@@ -6,6 +8,8 @@
 // const displayQuiz = function (quiz, where)
 
 const checkedButtons = document.getElementsByClassName('checked');
+const submitButton = document.getElementById('submit');
+const results = document.getElementById('results');
 
 let isTrue = false;
 
@@ -23,16 +27,6 @@ export function displayQuiz(quiz, where) {
             validate(quiz);
         });
     }
-    
-    submitButton.addEventListener('click', function(e) {
-        
-        if (isTrue) {
-                      
-        } else {
-            e.preventDefault();
-            alert('Du mangler at udfylde alle spørgsmål.')
-        }
-    });
 
     
 }
@@ -45,5 +39,18 @@ function validate(quiz) {
     } else {
         isTrue = false;
     }
+}
+
+export function dosomething(){
+
+// const forside = document.getElementById('forside');
+const quiz1 = document.getElementById('quiz1');
+const quiz2 = document.getElementById('quiz2');
+if(quiz1){
+    displayQuiz(quizOne, quiz1);
+}else{
+    displayQuiz(quizTwo, quiz2);
+}
+
 
 }
