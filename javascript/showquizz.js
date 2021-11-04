@@ -7,9 +7,11 @@ const checkedButtons = document.getElementsByClassName('checked');
 const submitButton = document.getElementById('submit');
 const answerButton = document.getElementsByClassName('answerButton');
 
-console.log(answerButton);
 
-let isTrue = false;
+console.log(quizOne);
+
+let isTrue = true;
+let userAnswers = [];
 
 export function displayQuiz(quiz, where) {
 
@@ -19,19 +21,23 @@ export function displayQuiz(quiz, where) {
     const submitButton = document.getElementById('submit');    
 
     for(let i = 0; i < answerButton.length; i++) {
-        /*answerButton[i].addEventListener('click', function() {
+        
+        //const checkedAnswers = document.querySelector()
+        answerButton[i].addEventListener('click', function() {
             answerButton[i].classList.toggle('checked');    
             
             validate(quiz);
-        });*/      
-        //console.log('Hallo')
+        });     
+        //console.log(answerButton[i])
     }
 
     submitButton.addEventListener('click', function(e) {
         
         if(isTrue) {
+            
             let string = JSON.stringify(quiz);
             localStorage.setItem("quiz", string);
+            localStorage.setItem('checkedAnswers', checkedAnswer);
             
 
         } else {
@@ -45,10 +51,21 @@ export function displayQuiz(quiz, where) {
 
 function validate(quiz) {
 
-    for(let i = 0; i < answerButton.length; i++) {
+    /*for(let i = 0; i < answerButton.length; i++) {
         if (answerButton[i].checked) {
             console.log('Hallo')
         }
+    }*/
+
+    
+
+    for(let i = 0; i < quiz.questions[i].possibleAnswers.length; i++) {
+
+        //console.log(quiz.questions[i].possibleAnswers)
+            
+        let checkedAnswer = document.querySelector(`input[name='group${i}']:checked`).value;
+        userAnswers.push(checkedAnswer);
+        console.log(userAnswers);
     }
 
     
